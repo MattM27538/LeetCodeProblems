@@ -5,11 +5,9 @@ public:
         if(ncopy<0){ncopy=-1*ncopy;}
         while(ncopy){
             if(ncopy%2==0){
-                x*=x; 
-                ncopy/=2;
+                x*=x; ncopy/=2;
             } else{
-                ans*=x; 
-                ncopy=ncopy-1;
+                ans*=x; ncopy--;
                 }
        }
        if(n<0){ans=1/ans;}
