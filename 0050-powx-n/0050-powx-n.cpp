@@ -9,7 +9,7 @@ public:
                 ncopy/=2;
             } else{
                 ans*=x; 
-                ncopy--;
+                ncopy=ncopy-1;
                 }
        }
        if(n<0){ans=1/ans;}
