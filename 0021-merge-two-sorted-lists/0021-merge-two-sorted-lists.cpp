@@ -18,6 +18,8 @@ public:
         if(list1->val>list2->val){result=list2; list2=list2->next;}
         else{result=list1; list1=list1->next;}
         temp=result;
+        // Compare values of pointers at both lists, attach lowest value to final list,
+        // then increment pointer that had lowest value to next node.
         while(list1!=NULL&&list2!=NULL){
             if(list1->val>list2->val){temp2=list2->next; temp->next=list2; list2=temp2;}
             else{temp2=list1->next; temp->next=list1; list1=temp2;}
