@@ -4,7 +4,7 @@ func canJump(nums []int) bool {
         default:
             maxJump:=nums[0]
             //Iterate through vector and check if each possible jump
-            //can reach a value that allows continual jumping forward.
+            //can reach a value that allows for continual jumping forward.
             for i:=0; i<len(nums); i++{
                 if maxJump==-1 {return false}
                 if nums[i]>=maxJump {maxJump=nums[i]}
