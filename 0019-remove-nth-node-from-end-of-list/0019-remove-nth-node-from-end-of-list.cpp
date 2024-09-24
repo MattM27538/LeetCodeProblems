@@ -31,7 +31,7 @@ public:
             delete(trailing);
             return head;
         }
-        //Remove nth node.
+        //Remove the nth node.
         ListNode *temp=head;
         while(temp->next!=trailing){temp=temp->next;}
         temp->next=trailing->next;
