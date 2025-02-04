@@ -12,32 +12,8 @@
 class Solution {
 public:
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-        stack<int16_t> treeLeaves1;
-        stack<int16_t> treeLeaves2;
-        stack<TreeNode*> treeNodes;
-        
-
-        treeNodes.push(root1);
-        while(!treeNodes.empty()){
-            TreeNode *temp=treeNodes.top();
-            treeNodes.pop();
-            if(!temp->right && !temp->left){
-                treeLeaves1.push(temp->val);
-            }
-            if(temp->right){treeNodes.push(temp->right);}
-            if(temp->left){treeNodes.push(temp->left);}
-        }
-
-        treeNodes.push(root2);
-          while(!treeNodes.empty()){
-            TreeNode *temp=treeNodes.top();
-            treeNodes.pop();
-            if(!temp->right && !temp->left){
-                treeLeaves2.push(temp->val);
-            }
-            if(temp->right){treeNodes.push(temp->right);}
-            if(temp->left){treeNodes.push(temp->left);}
-        }
+        addLeavesToStacks(root1,treeNodes,treeLeaves1);
+        addLeavesToStacks(root2,treeNodes,treeLeaves2);
 
         if(treeLeaves1.size()!=treeLeaves2.size()){return false;}
         while(!treeLeaves1.empty()){
@@ -45,13 +21,25 @@ public:
             treeLeaves1.pop();
             treeLeaves2.pop();
         }
-
-        // while(!treeLeaves.empty()){
-        //     cout<< treeLeaves.front() << " ";
-        //     treeLeaves.pop();
-        //     }
         return true;
     }
 
+    void addLeavesToStacks(TreeNode *root, stack<TreeNode*> &treeNodes, stack<int16_t> &leavesStack){
+        treeNodes.push(root);
+        while(!treeNodes.empty()){
+            TreeNode *temp=treeNodes.top();
+            treeNodes.pop();
+            if(!temp->right && !temp->left){
+                leavesStack.push(temp->val);
+            }
+            if(temp->right){treeNodes.push(temp->right);}
+            if(temp->left){treeNodes.push(temp->left);}
+        }
+    }
+
+    private:
+        stack<TreeNode*> treeNodes;
+        stack<int16_t> treeLeaves1;
+        stack<int16_t> treeLeaves2;
 
 };
