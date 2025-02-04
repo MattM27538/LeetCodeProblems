@@ -12,7 +12,7 @@
 class Solution {
 public:
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-        //Add leaves from each tree to as associated stack.
+        //Add leaves from each tree to a corresponding stack.
         addLeavesToStacks(root1,treeNodes,treeLeaves1);
         addLeavesToStacks(root2,treeNodes,treeLeaves2);
 
