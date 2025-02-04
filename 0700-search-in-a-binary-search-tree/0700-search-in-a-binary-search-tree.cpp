@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    TreeNode* searchBST(TreeNode* root, int val) {
+    TreeNode* searchBST(TreeNode* root, int &val) {
         /*Traverse tree recursively. If node value is greater that val go left
           otherwise go right. If the direction attempted is null return NULL.
         */
