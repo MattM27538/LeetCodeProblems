@@ -10,7 +10,7 @@ public:
             if(!(flowerbed[i-1]+flowerbed[i]+flowerbed[i+1])){
                 // ++count;
                 ++possiblePlacements;
-                i+=2;
+                i+=1;
             }
             // else{
             //     // possiblePlacements+=count/2;
