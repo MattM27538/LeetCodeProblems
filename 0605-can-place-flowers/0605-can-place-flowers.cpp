@@ -10,7 +10,7 @@ public:
         for(int i=1;i<flowerbed.size()-1;++i){
             if(!(flowerbed[i-1]+flowerbed[i]+flowerbed[i+1])){
                 ++possiblePlacements;
-                i+=1;
+                ++i;
             }
         }
 
