@@ -19,7 +19,7 @@ public:
         stack<pair<TreeNode*,int>> myStack;
         myStack.push(make_pair(root,1));
 
-        /*If top node from stack has children push children to stack with depth+1,
+        /*If top node from stack has children push children to stack with depth=depth+1,
           else if depth of node is greated than current maxDepth update maxDepth.
         */
         while(!myStack.empty()){
