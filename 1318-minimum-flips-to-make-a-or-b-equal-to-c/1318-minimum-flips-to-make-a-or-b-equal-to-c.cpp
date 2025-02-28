@@ -9,7 +9,7 @@ public:
 
         /*If an index of aORbInBinary does not equal cInBinary then increment 
           minflips by 1 if aORbInBinary is 0 because only one bit in a or b 
-          need to be flipped to make aOrbInBinary==c==1. Otherwise increment 
+          need to be flipped to make aOrbInBinary==c==1. Otherwise, increment 
           minflips by the number of 1s in the indices of interest in a and b 
           which would be flipped to 0's to make aORbInBinary==c==0.
         */
