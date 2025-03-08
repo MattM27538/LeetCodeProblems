@@ -6,8 +6,8 @@ public:
         //Reverse bits from ends of bitset to center of bitset iteratively.
         for(int i={0};i<myBitSet.size()/2;++i){
             bool temp={myBitSet[i]};
-            myBitSet[i]=myBitSet[myBitSet.size()-1-i];
-            myBitSet[myBitSet.size()-1-i]=temp;
+            myBitSet[i]=myBitSet[myBitSet.size()-i-1];
+            myBitSet[myBitSet.size()-i-1]=temp;
         }
 
         return myBitSet.to_ulong();
