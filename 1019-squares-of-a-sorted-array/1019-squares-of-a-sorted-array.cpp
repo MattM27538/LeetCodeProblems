@@ -9,8 +9,7 @@ public:
         /*Check both end indices of nums for highest absolute value.
           Square that value and push to final vector. Then
           iterate that index left or right towards the center of
-          nums until indicies converge.
-        */
+          nums until indicies converge. */
         while(backOfNums!=frontOfNums){
             if(abs(*backOfNums)>abs(*frontOfNums)){
                 *ansIterator=pow(*backOfNums,2);
