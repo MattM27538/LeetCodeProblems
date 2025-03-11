@@ -13,11 +13,9 @@ public:
         */
         while(ptr1!=ptr2){
             if(abs(*ptr1)>abs(*ptr2)){
-                // ans.insert(ans.begin(),pow(*ptr1,2));
                 *ptr3=pow(*ptr1,2);
                 --ptr1;
             } else {
-                // ans.insert(ans.begin(),pow(*ptr2,2));
                 *ptr3=pow(*ptr2,2);
                 ++ptr2;
             }
