@@ -2,12 +2,26 @@ class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
         vector<int> ans={};
-        //Add square of each value in nums to final vector.
-        for(const int &num:nums){
-            ans.push_back(pow(num,2));
+        int *ptr1={&nums[nums.size()-1]};
+        int *ptr2={&nums[0]};
+
+        /*Check both end indices of nums for highest absolute value.
+          Square that value and push to final vector. Then
+          iterate that index left or right towards the center of
+          nums until indicies converge.
+        */
+        while(ptr1!=ptr2){
+            if(abs(*ptr1)>abs(*ptr2)){
+                ans.insert(ans.begin(),pow(*ptr1,2));
+                --ptr1;
+            } else {
+                ans.insert(ans.begin(),pow(*ptr2,2));
+                ++ptr2;
+            }
         }
 
-        sort(ans.begin(),ans.end());
+        //Add square of index value at convergence to final vector.
+        ans.insert(ans.begin(),pow(*ptr1,2));
         return ans;
     }
 };
