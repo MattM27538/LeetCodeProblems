@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
         vector<int> ans(nums.size(),0);
+        
         int *ptr1={&nums[nums.size()-1]};
         int *ptr2={&nums[0]};
         int *ptr3={&ans[ans.size()-1]};
