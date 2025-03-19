@@ -4,7 +4,7 @@ public:
         std::vector<std::vector<int>> ans={{},{}};
         std::unordered_map<int,int> mapOfNums1Ints;
 
-        // Hash all ints in nums1 as key=nums1[i] value=1.
+        // Hash all ints in nums1 as key=nums1[i] with value=1.
         for(int i=0;i<nums1.size();++i){
            mapOfNums1Ints[nums1[i]]=1;
         }
