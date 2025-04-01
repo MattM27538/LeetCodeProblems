@@ -3,7 +3,7 @@ class Solution:
         weekCount=n//7
         remainingDays=n%7
         
-        #Calculate value in bank.
+        #Calculate final value in bank.
         total=((weekCount*(weekCount-1))//2)*7 
         total+=weekCount*28
         total+=((remainingDays*(remainingDays+1))//2)+(weekCount*remainingDays)
