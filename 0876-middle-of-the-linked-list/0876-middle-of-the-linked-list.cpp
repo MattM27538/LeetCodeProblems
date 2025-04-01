@@ -14,9 +14,9 @@ public:
         ListNode *midNodePtr=head;
         
         /* While head->next!=nullptr iterate through linked 
-           list. If next node !=nullptr Iterate both head and 
+           list. If next node!=nullptr Iterate both head and 
            midNodePtr, then delete the node they were previously 
-           pointing to. If next node !=nullptr iterate head again.     
+           pointing to. If next node!=nullptr iterate head again.     
         */
         while(head->next!=nullptr){
             ListNode *temp=midNodePtr;
