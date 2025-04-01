@@ -19,21 +19,14 @@ public:
            pointing to. If next node !=nullptr iterate head again.     
         */
         while(head->next!=nullptr){
-            // if(head->next!=nullptr){
-                ListNode *temp=midNodePtr;
-                head=head->next;
-                midNodePtr=midNodePtr->next;
-                temp=nullptr;
-            // }
+            ListNode *temp=midNodePtr;
+            head=head->next;
+            midNodePtr=midNodePtr->next;
+            temp=nullptr;
 
             if(head->next!=nullptr){
-                // temp=head;
                 head=head->next;
-                //  delete(temp);
             }
-            // else {
-            //     return midNodePtr;
-            // }
         }
 
         return midNodePtr;
