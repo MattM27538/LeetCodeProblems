@@ -6,7 +6,7 @@ class Solution:
 
         # Add incrementing values to ans increasing
         # by 1 each addition. If value is divisible by 7
-        # increase starting value.
+        # increment starting value.
         for i in range(1,n+1):
             ans+=valToAdd
             if i%7==0:
