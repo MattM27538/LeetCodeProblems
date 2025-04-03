@@ -28,9 +28,9 @@ public:
 
         nodeStack.push(make_pair(root,1));
 
-        /*Iterate through and add all nodes and their depth
-        to the stack. If the node's depth is greater 
-        than the current maxDepth update maxDepth.
+        /*Iterate through and add all nodes from tree
+        and their depth to the stack. If the node's depth 
+        is greater than the current maxDepth update maxDepth.
         */
         while(!nodeStack.empty()){
             pair<Node*,int> currentNode=nodeStack.top();
