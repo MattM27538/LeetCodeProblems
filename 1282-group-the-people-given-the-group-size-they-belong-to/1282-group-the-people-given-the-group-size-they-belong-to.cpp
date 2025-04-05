@@ -13,7 +13,7 @@ public:
             else{
                groupSizeToMembersMap[groupSizes[i]].push_back(i);
             }
-            // Add filled group to vector of final groups.
+            // Add filled group to finalGroups.
             if(groupSizeToMembersMap[groupSizes[i]].size()==groupSizes[i]){
                 finalGroups.push_back(groupSizeToMembersMap[groupSizes[i]]);
                 groupSizeToMembersMap[groupSizes[i]].clear();
