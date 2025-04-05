@@ -12,26 +12,18 @@
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
-        if(root!=nullptr){
+        if(root==nullptr){
+            root=new TreeNode(val);
+        }
+        else{
+            //If node val is greater than val go to left child node.
             if((root->val)>val){
-                if(root->left==nullptr){
-                    root->left= new TreeNode(val);
-                }
-                else{
-                    std::cout<<root->val<<" ";
-                    insertIntoBST(root->left,val);
-                }
+                root->left=insertIntoBST(root->left,val);
             }
+            //Go to right child node.
             else {
-                if(root->right==nullptr){
-                    root->right= new TreeNode(val);
-                }
-                else{
-                    std::cout<<root->val<<" ";
-                    insertIntoBST(root->right,val);
-                }
+                root->right=insertIntoBST(root->right,val);
             }
-            
         }
 
         return root;
