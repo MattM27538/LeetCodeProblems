@@ -16,7 +16,7 @@ public:
             root=new TreeNode(val);
         }
         else{
-            //If node val is greater than val go to left child node.
+            //If root val is greater than val go to left child node.
             if((root->val)>val){
                 root->left=insertIntoBST(root->left,val);
             }
