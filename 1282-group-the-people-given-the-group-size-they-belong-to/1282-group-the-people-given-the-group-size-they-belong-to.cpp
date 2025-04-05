@@ -8,12 +8,11 @@ public:
             // Add new group to map for size groupSizes[i].
             if(groupSizeToMembersMap.find(groupSizes[i])==groupSizeToMembersMap.end()){
                 groupSizeToMembersMap[groupSizes[i]]={i};
-                groupSizeToMembersMap[groupSizes[i]].reserve(groupSizes[i]);
             }
             else{
                groupSizeToMembersMap[groupSizes[i]].push_back(i);
             }
-            // Add filled group to vector of final groups.
+            // Add filled group to finalGroups.
             if(groupSizeToMembersMap[groupSizes[i]].size()==groupSizes[i]){
                 finalGroups.push_back(groupSizeToMembersMap[groupSizes[i]]);
                 groupSizeToMembersMap[groupSizes[i]].clear();
