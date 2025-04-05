@@ -8,7 +8,7 @@ public:
             // Add new group to map for size groupSizes[i].
             if(groupSizeToMembersMap.find(groupSizes[i])==groupSizeToMembersMap.end()){
                 groupSizeToMembersMap[groupSizes[i]]={i};
-                // groupSizeToMembersMap[groupSizes[i]].reserve(groupSizes[i]);
+                groupSizeToMembersMap[groupSizes[i]].reserve(groupSizes[i]);
             }
             else{
                groupSizeToMembersMap[groupSizes[i]].push_back(i);
