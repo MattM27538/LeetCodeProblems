@@ -1,25 +1,18 @@
 class Solution {
 public:
     int countPairs(vector<int>& nums, int target) {
-        int numberOfPairs={0};
-        if(nums.size()==1){return numberOfPairs;}
+        int numOfPairs={0};
 
-        int *trailingPtr={&nums[0]};
-        int *leadingPtr={&nums[1]};
-
-        //Iterate through each pair of indices of nums. 
-        while(leadingPtr!=((&nums.back())+1)){
-            if((*trailingPtr+*leadingPtr)<target){
-                ++numberOfPairs;
-            }
-
-            //Restart iteration of leading pointer when it reaches end of nums.
-            if((++leadingPtr)==((&nums.back())+1)){
-                ++trailingPtr;
-                leadingPtr=trailingPtr+1;
+        //Iterate through all pairs of indices in nums.
+        for(int i={0};i<nums.size();++i){
+            for(int j={i+1};j<nums.size();++j){
+                //Check if each pair sums to less than target.
+                if(nums[i]+nums[j]<target){
+                    ++numOfPairs;
+                }
             }
         }
 
-        return numberOfPairs;
+        return numOfPairs;
     }
 };
