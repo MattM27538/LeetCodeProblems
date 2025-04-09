@@ -1,7 +1,7 @@
 class Solution {
 public:
     int countPairs(vector<int>& nums, int target) {
-        int numOfPairs={0};
+        int numberOfPairs={0};
 
         //Iterate through all pairs of indices in nums.
         for(int i={0};i<nums.size();++i){
@@ -13,6 +13,6 @@ public:
             }
         }
 
-        return numOfPairs;
+        return numberOfPairs;
     }
 };
