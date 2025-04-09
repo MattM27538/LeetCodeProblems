@@ -12,7 +12,8 @@ public:
             if((*trailingPtr+*leadingPtr)<target){
                 ++numberOfPairs;
             }
-            // ++trailingPtr;
+
+            //Restart iteration of leading pointer when it reaches end of nums.
             if((++leadingPtr)==((&nums.back())+1)){
                 ++trailingPtr;
                 leadingPtr=trailingPtr+1;
