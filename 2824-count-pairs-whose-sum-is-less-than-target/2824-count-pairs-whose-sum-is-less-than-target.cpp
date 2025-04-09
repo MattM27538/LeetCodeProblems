@@ -8,7 +8,7 @@ public:
             for(int j={i+1};j<nums.size();++j){
                 //Check if each pair of indices sums to less than target.
                 if(nums[i]+nums[j]<target){
-                    ++numOfPairs;
+                    ++numberOfPairs;
                 }
             }
         }
