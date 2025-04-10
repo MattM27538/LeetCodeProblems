@@ -9,7 +9,7 @@ public:
             charIndexMap[s[i]]=i;
         }
 
-        //Add abs value of same char indices between strings s and t.
+        //Sum abs value of same char indices between strings s and t.
         for(int i={0};i<t.size();++i){
             permutationDifference+=abs(charIndexMap[t[i]]-i);
         }
