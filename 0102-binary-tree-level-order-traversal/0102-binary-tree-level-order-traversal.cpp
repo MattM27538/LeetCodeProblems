@@ -17,7 +17,7 @@ public:
         if(root==nullptr){
             return levelOrderTraversal;
         }
-        
+
         queue<TreeNode*>treeNodeQueue={};
         treeNodeQueue.push(root);
 
@@ -44,4 +44,5 @@ public:
         }
 
         return levelOrderTraversal;
+    }
 };
