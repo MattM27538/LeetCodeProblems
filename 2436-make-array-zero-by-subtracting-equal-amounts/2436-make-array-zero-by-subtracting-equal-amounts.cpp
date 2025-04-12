@@ -10,6 +10,6 @@ public:
             }
         }
 
-        return uniqueValsMap.size();
+        return static_cast<int>(uniqueValsMap.size());
     }
 };
