@@ -25,7 +25,7 @@ public:
             int sizeOfCurrentLevel=treeNodeQueue.size();
             vector<int>levelValues={};
             
-            //Add nodes from each level to vector annd push vector to levelOrderTraversal;
+            //Add nodes from each level to vector annd push vector to levelOrderTraversal.
             for(int i={0};i<sizeOfCurrentLevel;++i){
                 TreeNode *node=treeNodeQueue.front();
                 treeNodeQueue.pop();
