@@ -4,7 +4,7 @@ public:
         vector<vector<string>> sortedAnagrams{};
         unordered_map<string,vector<string>> stringToAnagramMap{}; 
 
-        //Map all string anagrams into vectors. 
+        //Map all groups of anagrams into vectors. 
         for(int i{0};i<strs.size();++i){
             auto temp{strs[i]};
             sort(temp.begin(),temp.end());
