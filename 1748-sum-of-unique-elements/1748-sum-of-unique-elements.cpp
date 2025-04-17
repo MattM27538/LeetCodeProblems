@@ -4,7 +4,7 @@ public:
         auto sumOfUniqueElements{0};
         std::unordered_map<int,bool> uniqueElementsMap;
 
-        //Set all unique elements value to true in map;
+        //Map all unique elements in nums to true in map.
         for(const auto &num:nums){
             if(uniqueElementsMap.find(num)==uniqueElementsMap.end()){
                 uniqueElementsMap[num]=true;
