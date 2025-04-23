@@ -3,12 +3,13 @@ public:
 
     int alternateDigitSum(int n) {
         auto digitSum{0};
+        constexpr auto divisorToGetDigits{10};
         stack<int> digits;
 
         //Add all digits to stack.
         while(n>0){
-            digits.push(n%10);
-            n/=10;
+            digits.push(n%divisorToGetDigits);
+            n/=divisorToGetDigits;
         }
 
         //Sum all digits.
