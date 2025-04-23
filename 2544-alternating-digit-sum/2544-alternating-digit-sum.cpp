@@ -6,11 +6,13 @@ public:
         constexpr auto divisorToGetDigits{10};
         std::stack<int> digits;
 
+        //Add all digits to stack.
         while(n>0){
             digits.push(n%divisorToGetDigits);
             n/=divisorToGetDigits;
         }
 
+        //Sum all digits.
         while(!digits.empty()){
             digitSum+=digits.top();
             digits.pop();
