@@ -12,7 +12,7 @@ public:
             n/=divisorToGetDigits;
         }
 
-        //Sum all digits.
+        //Sum all digits in n.
         while(!digits.empty()){
             digitSum+=digits.top();
             digits.pop();
