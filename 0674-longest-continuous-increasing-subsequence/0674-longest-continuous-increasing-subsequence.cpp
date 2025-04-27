@@ -8,11 +8,11 @@ public:
             if(nums[i]>nums[i-1]){
                 ++currentSequenceLength;
             }
+            
             if(nums[i]<=nums[i-1] || i==nums.size()-1){
                 longestIncreasingSequence=max(longestIncreasingSequence,currentSequenceLength);
                 currentSequenceLength=1;
             }
-            
         }
 
         return longestIncreasingSequence;
