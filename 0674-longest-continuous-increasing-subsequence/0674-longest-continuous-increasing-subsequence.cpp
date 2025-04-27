@@ -1,8 +1,8 @@
 class Solution {
 public:
     int findLengthOfLCIS(vector<int>& nums) {
-        auto currentSequenceLength{1};
         auto longestIncreasingSequence{1};
+        auto currentSequenceLength{1};
 
         for(int i{1};i<nums.size();++i){
             if(nums[i]>nums[i-1]){
