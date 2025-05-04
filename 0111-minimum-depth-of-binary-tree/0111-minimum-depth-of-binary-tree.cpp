@@ -30,7 +30,7 @@ public:
                 if(nodesOfTreeLevel.front()->left){
                     nodesOfTreeLevel.push(nodesOfTreeLevel.front()->left);
                 }
-                if{
+                if(nodesOfTreeLevel.front()->right){
                     nodesOfTreeLevel.push(nodesOfTreeLevel.front()->right);
                 }
 
