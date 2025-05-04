@@ -12,29 +12,38 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        int cnt=0;
-        if(root==NULL) return cnt;
-        queue<TreeNode*>q;
-        q.push(root);
-        while(!q.empty()){
-            int sz=q.size();
-            cnt++;
-            for(int i=1;i<=sz;i++){
-                TreeNode *tem= q.front();
-                q.pop();
-                if(tem->left==NULL&&tem->right==NULL){
-                    return cnt;
-                }
-                if(tem->left){
-                    q.push(tem->left);
-                }
-                if(tem->right){
-                    q.push(tem->right);
-                }
-            }
+        if(root==nullptr){
+            return minimumDepth;
         }
-        return cnt;
 
+        queue<TreeNode*> nodesOfTreeLevel{};
+        nodesOfTreeLevel.push(root);
+        auto nodesInLevel{1};
+        ++minimumDepth;
+
+        while(!nodesOfTreeLevel.empty()){
+            //Iterate through each layer of Binary Tree.
+            for(int i{0};i<nodesInLevel;++i){
+                if(nodesOfTreeLevel.front()->left==nullptr && nodesOfTreeLevel.front()->right==nullptr){
+                    return minimumDepth;
+                }
+                if(nodesOfTreeLevel.front()->left){
+                    nodesOfTreeLevel.push(nodesOfTreeLevel.front()->left);
+                }
+                if(nodesOfTreeLevel.front()->right){
+                    nodesOfTreeLevel.push(nodesOfTreeLevel.front()->right);
+                }
+
+                nodesOfTreeLevel.pop();
+            }
+
+            nodesInLevel=nodesOfTreeLevel.size();
+            std::cout<<nodesInLevel<<" ";
+            ++minimumDepth;
+        }
+
+        return minimumDepth;
     }
 
+    int minimumDepth{0};
 };
