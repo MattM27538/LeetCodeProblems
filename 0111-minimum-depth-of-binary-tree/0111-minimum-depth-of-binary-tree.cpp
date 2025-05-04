@@ -12,26 +12,29 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
+        auto minimumDepth{0};
+        auto nodesInLevel{1};
+        
         if(root==nullptr){
             return minimumDepth;
         }
 
         queue<TreeNode*> nodesOfTreeLevel{};
         nodesOfTreeLevel.push(root);
-        auto nodesInLevel{1};
         ++minimumDepth;
 
         while(!nodesOfTreeLevel.empty()){
-            //Iterate through each layer of Binary Tree.
+            //Iterate through each layer of Binary Tree and return minimum depth.
             for(int i{0};i<nodesInLevel;++i){
-                if(nodesOfTreeLevel.front()->left==nullptr && nodesOfTreeLevel.front()->right==nullptr){
+                TreeNode* tempNode{nodesOfTreeLevel.front()};
+                if(tempNode->left==nullptr && tempNode->right==nullptr){
                     return minimumDepth;
                 }
-                if(nodesOfTreeLevel.front()->left){
-                    nodesOfTreeLevel.push(nodesOfTreeLevel.front()->left);
+                if(tempNode->left){
+                    nodesOfTreeLevel.push(tempNode->left);
                 }
-                if(nodesOfTreeLevel.front()->right){
-                    nodesOfTreeLevel.push(nodesOfTreeLevel.front()->right);
+                if(tempNode->right){
+                    nodesOfTreeLevel.push(tempNode->right);
                 }
 
                 nodesOfTreeLevel.pop();
@@ -45,5 +48,4 @@ public:
         return minimumDepth;
     }
 
-    int minimumDepth{0};
 };
