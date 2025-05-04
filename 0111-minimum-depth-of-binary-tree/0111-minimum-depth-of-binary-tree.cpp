@@ -41,7 +41,6 @@ public:
             }
 
             nodesInLevel=nodesOfTreeLevel.size();
-            std::cout<<nodesInLevel<<" ";
             ++minimumDepth;
         }
 
