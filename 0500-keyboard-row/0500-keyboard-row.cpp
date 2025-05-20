@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool allLettersInSameRow(std::string_view word, int firstLetterRow, std::unordered_map<char,int>& letterToRowMap){
+    bool allLettersInSameRow(std::string_view word, int& firstLetterRow, std::unordered_map<char,int>& letterToRowMap){
         for(const auto& letter:word){
             if(letterToRowMap.at(std::tolower(letter))!=firstLetterRow){
                 return false;
