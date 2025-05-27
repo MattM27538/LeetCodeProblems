@@ -1,20 +1,18 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
-        std:vector<int> disappearedNumbers;
-        std::unordered_map<int,bool> existingIntsInNums{};
-
-        //Add all existing numbers in nums to Map.
-        for(const auto& num:nums){
-            if(existingIntsInNums.find(num)==existingIntsInNums.end()){
-                existingIntsInNums[num]=true;
+        vector<int> disappearedNumbers;
+        //For each number in nums mark the value at index [number - 1] as negative.
+        for(int i{0};i<nums.size();++i){
+            if(nums[abs(nums[i])-1]>0){
+                nums[abs(nums[i])-1]*=-1;
             }
         }
 
-        //Add all numbers between 1 and n to vector disappearedNumbers.
-        for(int i{1};i<=nums.size();++i){
-            if(existingIntsInNums.find(i)==existingIntsInNums.end()){
-                disappearedNumbers.push_back(i);
+        //Add all indices in nums with positive numbers to vector disappearedNumbers.
+        for(int i{0};i<nums.size();++i){
+            if(nums[i]>0){
+                disappearedNumbers.push_back(i+1);
             }
         }
 
