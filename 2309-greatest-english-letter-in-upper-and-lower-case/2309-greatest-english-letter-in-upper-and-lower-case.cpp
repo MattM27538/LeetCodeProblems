@@ -14,17 +14,17 @@ public:
     }
 
 private: 
-    void updateGreatestChar(std::string& m_greatestCharInStr,const char letter);
+    void updateGreatestChar(std::string& m_greatestCharInStr,const char greatestChar);
 
     std::string m_greatestCharInStr{""};
     std::unordered_map<char,bool> m_charsInStrMap{};
 };
 
-void Solution::updateGreatestChar(std::string& m_greatestCharInStr,const char letter){
+void Solution::updateGreatestChar(std::string& m_greatestCharInStr,const char greatestChar){
     if(m_greatestCharInStr==""){
-        m_greatestCharInStr.push_back(toupper(letter));
+        m_greatestCharInStr.push_back(toupper(greatestChar));
     }
-    else if(toupper(letter)>m_greatestCharInStr[0]){
-        m_greatestCharInStr[0]=toupper(letter);
+    else if(toupper(greatestChar)>m_greatestCharInStr[0]){
+        m_greatestCharInStr[0]=toupper(greatestChar);
     }
 }
