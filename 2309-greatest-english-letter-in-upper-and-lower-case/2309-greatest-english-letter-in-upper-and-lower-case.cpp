@@ -20,13 +20,13 @@ public:
     }
 
 private: 
-    void updateGreatestChar(std::string& greatestChar,const char& letter);
+    void updateGreatestChar(std::string& greatestChar,const char letter);
 
     std::string greatestChar{""};
     std::unordered_map<char,bool> charsInSMap{};
 };
 
-void Solution::updateGreatestChar(std::string& greatestChar,const char& letter){
+void Solution::updateGreatestChar(std::string& greatestChar,const char letter){
     if(greatestChar==""){
         greatestChar.push_back(toupper(letter));
     }
