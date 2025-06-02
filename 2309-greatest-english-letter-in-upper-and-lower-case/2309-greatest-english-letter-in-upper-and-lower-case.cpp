@@ -4,6 +4,7 @@ public:
         for(const auto& letter:s){
             if((islower(letter) && m_charsInSMap.find(toupper(letter))!=m_charsInSMap.end())
             || (isupper(letter) && m_charsInSMap.find(tolower(letter))!=m_charsInSMap.end())){
+                
                 updateGreatestChar(m_greatestChar,letter);
             }
 
