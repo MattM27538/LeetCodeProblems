@@ -2,15 +2,9 @@ class Solution {
 public:
     string greatestLetter(string s) {
         for(const auto& letter:s){
-            if(islower(letter)){
-                if(charsInSMap.find(toupper(letter))!=charsInSMap.end()){
+            if((islower(letter) && charsInSMap.find(toupper(letter))!=charsInSMap.end())
+            || (isupper(letter) && charsInSMap.find(tolower(letter))!=charsInSMap.end())){
                     updateGreatestChar(greatestChar,letter);
-                }
-            }
-            else{
-                 if(charsInSMap.find(tolower(letter))!=charsInSMap.end()){
-                    updateGreatestChar(greatestChar,letter);
-                 }
             }
 
             charsInSMap[letter]=true;
