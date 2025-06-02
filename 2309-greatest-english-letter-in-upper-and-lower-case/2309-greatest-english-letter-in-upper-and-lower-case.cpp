@@ -9,7 +9,6 @@ public:
 
             m_charsInStrMap[letter]=true;
         }
-
         return m_greatestCharInStr;
     }
 
