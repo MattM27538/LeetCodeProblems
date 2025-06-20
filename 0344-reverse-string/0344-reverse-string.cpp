@@ -1,17 +1,10 @@
 class Solution {
 public:
     void reverseString(vector<char>& s) {
-        char* letterToSwap1{&s[0]};
-        char* letterToSwap2{&s[s.size()-1]};
-        char temp{' '};
-
-        //Swap letters in vector s.
-        while(letterToSwap1<letterToSwap2){
-            temp=*letterToSwap1;
-            *letterToSwap1=*letterToSwap2;
-            *letterToSwap2=temp;
-            ++letterToSwap1;
-            --letterToSwap2;
+        for(std::size_t i{0};i<s.size()/2;++i){
+            char temp{s[i]};
+            s[i]=s[s.size()-i-1];
+            s[s.size()-i-1]=temp;
         }
     }
 };
