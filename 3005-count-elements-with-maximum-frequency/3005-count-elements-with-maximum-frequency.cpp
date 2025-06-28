@@ -13,6 +13,7 @@ public:
             }
             else{
                 ++numsToOccurrencesMap[num];
+
                 if(numsToOccurrencesMap[num]>maxFrequency){
                     maxFrequency=numsToOccurrencesMap[num];
                 }
