@@ -1,11 +1,12 @@
 class Solution {
 public:
     int maxFrequencyElements(vector<int>& nums) {
-        int8_t maxFrequency{1};
-        int8_t countOfMaxFrequency{0};
+        int maxFrequency{1};
+        int countOfMaxFrequency{0};
 
-        std::unordered_map<int8_t,int8_t> numsToOccurrencesMap{};
-
+        std::unordered_map<int,int> numsToOccurrencesMap{};
+        
+        //All all frequencies of numbers in nums to map.
         for(const auto& num:nums){
             if(numsToOccurrencesMap.find(num)==numsToOccurrencesMap.end()){
                 numsToOccurrencesMap[num]=1;
@@ -18,6 +19,7 @@ public:
             }
         }
 
+        //Add frequency of numbers with max occurrence together.
         for(const auto& pair:numsToOccurrencesMap){
             if(pair.second==maxFrequency){
                 countOfMaxFrequency+=maxFrequency;
