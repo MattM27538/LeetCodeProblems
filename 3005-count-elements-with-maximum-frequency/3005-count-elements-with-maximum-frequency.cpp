@@ -1,10 +1,10 @@
 class Solution {
 public:
     int maxFrequencyElements(vector<int>& nums) {
-        int maxFrequency{1};
-        int countOfMaxFrequency{0};
+        int8_t maxFrequency{1};
+        int8_t countOfMaxFrequency{0};
 
-        std::unordered_map<int,int> numsToOccurrencesMap{};
+        std::unordered_map<int8_t,int8_t> numsToOccurrencesMap{};
         
         //All all frequencies of numbers in nums to map.
         for(const auto& num:nums){
