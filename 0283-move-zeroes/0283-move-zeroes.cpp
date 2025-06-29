@@ -4,8 +4,9 @@ bool stableSortSwap(const int num1,const int num2){
         return false;
     }
 
+    //If nums2==0 don't swap.
     if(num2==0){
-        return true; //Don't swap.
+        return true;
     }
 
     return false;
