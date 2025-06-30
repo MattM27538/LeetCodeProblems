@@ -4,7 +4,7 @@ public:
         auto forwardIterator{s.begin()};
         auto reverseIterator{s.end()};
 
-        //Swap locations with characters
+        //Swap locations with letters.
         while(forwardIterator<reverseIterator){
             if(std::isalpha(*forwardIterator) && std::isalpha(*reverseIterator)){
                 std::swap(*forwardIterator, *reverseIterator);
