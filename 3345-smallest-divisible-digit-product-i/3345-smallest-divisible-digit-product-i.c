@@ -14,6 +14,7 @@ int smallestNumber(int n, int t) {
             return smallestDivisibleNumber;
         }
 
+        //Try n+1 in next iteration.
         n=smallestDivisibleNumber;
         ++n;
     }
