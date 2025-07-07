@@ -1,17 +1,19 @@
 class Solution {
 public:
     int getCommon(vector<int>& nums1, vector<int>& nums2) {
-        std::unordered_map<int,bool> numsInNums1{};
+        auto nums1Iterator{nums1.begin()};
+        auto nums2Iterator{nums2.begin()};
 
-        //Add all numbers in nums1 to map.
-        for(const auto& num:nums1){
-            numsInNums1[num]=true;
-        }
-
-        //Return the first number in nums2 found in map.
-        for(const auto& num:nums2){
-            if(numsInNums1.find(num)!=numsInNums1.end()){
-                return num;
+        while((nums1Iterator != nums1.end()) && (nums2Iterator != nums2.end())){
+            //Return smallest common value between vectors.
+            if(*nums1Iterator == *nums2Iterator){
+                return *nums1Iterator;
+            } 
+            else if (*nums1Iterator < *nums2Iterator) {
+                ++nums1Iterator;
+            } 
+            else {
+                ++nums2Iterator;
             }
         }
 
