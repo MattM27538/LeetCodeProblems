@@ -1,4 +1,5 @@
 bool isVowel(char letter){
+    //Return true if letter is a vowel.
     switch(toupper(letter)){
             case 'A':
             case 'E':
@@ -29,13 +30,15 @@ char* reverseVowels(char* s) {
 
     while(forwardIterator<reverseIterator){
         if(!isVowel(*forwardIterator)){
+            //Move to forward to next char in string.
             ++forwardIterator;
         }
         else if(!isVowel(*reverseIterator)){
+            //Move to backwards to next char in string.
             --reverseIterator;
         }
         else{
-            swapChars(forwardIterator,reverseIterator);
+            swapChars(forwardIterator, reverseIterator);
             ++forwardIterator;
             --reverseIterator;
         }
