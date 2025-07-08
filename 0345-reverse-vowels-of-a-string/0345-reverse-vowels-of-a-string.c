@@ -30,11 +30,11 @@ char* reverseVowels(char* s) {
 
     while(forwardIterator<reverseIterator){
         if(!isVowel(*forwardIterator)){
-            //Move to forward to next char in string.
+            //Move to forward to next char in string s.
             ++forwardIterator;
         }
         else if(!isVowel(*reverseIterator)){
-            //Move to backwards to next char in string.
+            //Move to backwards to next char in string s.
             --reverseIterator;
         }
         else{
