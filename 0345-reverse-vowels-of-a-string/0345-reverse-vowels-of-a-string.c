@@ -1,20 +1,20 @@
 bool isVowel(char letter){
     //Return true if letter is a vowel.
     switch(toupper(letter)){
-            case 'A':
-            case 'E':
-            case 'I':
-            case 'O':
-            case 'U':
-                {
-                    return true;
-                }
-            break;
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            {
+                return true;
+            }
+        break;
 
-            default: 
-                {
-                    return false;
-                }
+        default: 
+            {
+                return false;
+            }
     }
 }
 
