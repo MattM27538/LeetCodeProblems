@@ -8,5 +8,5 @@ char findTheDifference(char* s, char* t) {
 
     differenceBetweenStringsAsciiValues+=t[strlen(t)-1];
 
-    return (char) differenceBetweenStringsAsciiValues;
+    return (char)differenceBetweenStringsAsciiValues;
 }
