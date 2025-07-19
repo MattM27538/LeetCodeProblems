@@ -9,12 +9,12 @@ public:
             ++index;
 
             if(searchWord.size() <= sentenceWord.size()){
-                for(decltype(std::ssize(sentenceWord)) i{0}; i < std::ssize(searchWord); ++i){
+                for(std::size_t i{0}; i < searchWord.size(); ++i){
                     if(searchWord.data()[i] != sentenceWord.data()[i]){
                         break;
                     }
                     //Return index if searchWord is a prefix of sentenceWord.
-                    if(i == std::ssize(searchWord)-1){
+                    if(i == searchWord.size()-1){
                         return index;
                     }
                 }
