@@ -3,9 +3,11 @@
 
 int maxNumberOfBalloons(char* text) {
     // struct Balloon Balloon={
-    int lettersInBalloon[5]={0,0,0,0,0}; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
+    // int lettersInBalloon[5]={0,0,0,0,0}; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
     size_t lettersInBalloonSize=5;
     int smallestNumberOfAppearancesOfBalloon=INT_MAX;
+    int* lettersInBalloon = (int*)malloc(sizeof(int)*5);
+    memset(lettersInBalloon,0,5*sizeof(int));
         // .lettersInBalloon={0,0,0,0,0},
         // .lettersInBalloonSize=sizeof(Balloon.lettersInBalloon)/sizeof(int),
         // .smallestNumberOfAppearancesOfBalloon=INT_MAX,
