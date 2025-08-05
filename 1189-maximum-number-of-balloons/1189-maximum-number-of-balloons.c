@@ -1,5 +1,5 @@
 struct Balloon{
-    int lettersInBalloon[5]; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'.
+    int lettersInBalloon[5]; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
     const size_t lettersInBalloonSize;
     int smallestNumberOfAppearancesOfBalloon;
 };
