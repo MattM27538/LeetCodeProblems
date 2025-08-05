@@ -1,6 +1,6 @@
 struct Balloon{
     int lettersInBalloon[5]; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
-    size_t lettersInBalloonSize;
+    const size_t lettersInBalloonSize;
     int smallestNumberOfAppearancesOfBalloon;
 };
 
@@ -23,6 +23,8 @@ int maxNumberOfBalloons(char* text) {
             break; 
             case 'n': ++Balloon.lettersInBalloon[4];
             break;
+            default:
+                ;;;
         }
     }
 
