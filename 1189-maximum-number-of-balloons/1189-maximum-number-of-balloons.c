@@ -1,40 +1,40 @@
-struct Balloon{
-    int lettersInBalloon[5]; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
-    size_t lettersInBalloonSize;
-    int smallestNumberOfAppearancesOfBalloon;
-};
+// struct Balloon{
+// };
 
 int maxNumberOfBalloons(char* text) {
-    struct Balloon Balloon={
-        .lettersInBalloon={0,0,0,0,0},
-        .lettersInBalloonSize=sizeof(Balloon.lettersInBalloon)/sizeof(int),
-        .smallestNumberOfAppearancesOfBalloon=INT_MAX,
-    };
+    // struct Balloon Balloon={
+    int lettersInBalloon[5]={0,0,0,0,0}; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
+    size_t lettersInBalloonSize=5;
+    int smallestNumberOfAppearancesOfBalloon=INT_MAX;
+        // .lettersInBalloon={0,0,0,0,0},
+        // .lettersInBalloonSize=sizeof(Balloon.lettersInBalloon)/sizeof(int),
+        // .smallestNumberOfAppearancesOfBalloon=INT_MAX,
+    // };
 
     for(int i=0; i < strlen(text); ++i){
         switch(text[i]){
-            case 'b': ++Balloon.lettersInBalloon[0];
+            case 'b': ++lettersInBalloon[0];
             break;
-            case 'a': ++Balloon.lettersInBalloon[1];
+            case 'a': ++lettersInBalloon[1];
             break;
-            case 'l': ++Balloon.lettersInBalloon[2];
+            case 'l': ++lettersInBalloon[2];
             break;
-            case 'o': ++Balloon.lettersInBalloon[3];
+            case 'o': ++lettersInBalloon[3];
             break; 
-            case 'n': ++Balloon.lettersInBalloon[4];
+            case 'n': ++lettersInBalloon[4];
             break;
         }
     }
 
     //Account for 'l' and 'o' needing to appear twice to make one instance of "balloon".
-    Balloon.lettersInBalloon[2]/=2;
-    Balloon.lettersInBalloon[3]/=2;
+    lettersInBalloon[2]/=2;
+    lettersInBalloon[3]/=2;
 
-    for(int i=0; i<Balloon.lettersInBalloonSize; ++i){
-        if(Balloon.lettersInBalloon[i] < Balloon.smallestNumberOfAppearancesOfBalloon){
-            Balloon.smallestNumberOfAppearancesOfBalloon=Balloon.lettersInBalloon[i];
+    for(int i=0; i<lettersInBalloonSize; ++i){
+        if(lettersInBalloon[i] < smallestNumberOfAppearancesOfBalloon){
+            smallestNumberOfAppearancesOfBalloon=lettersInBalloon[i];
         }
     }
 
-    return Balloon.smallestNumberOfAppearancesOfBalloon;
+    return smallestNumberOfAppearancesOfBalloon;
 }
