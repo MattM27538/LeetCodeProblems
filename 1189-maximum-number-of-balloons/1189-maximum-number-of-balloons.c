@@ -1,46 +1,40 @@
-struct lettersInBalloon{
-    int numOfBs;
-    int numOfAs;
-    int numOfLs;
-    int numOfOs;
-    int numOfNs;
-
+struct Balloon{
+    int lettersInBalloon[5]; // [0]='b', [1]='a', [2]='l', [3]='o', [4]='n'
+    size_t lettersInBalloonSize;
+    int smallestNumberOfAppearancesOfBalloon;
 };
 
-int numberOfBalloonAppearances(struct lettersInBalloon* countOfLetters){
-    int smallestNumberOfAppearances=INT_MAX;
-    if(countOfLetters->numOfBs < smallestNumberOfAppearances){smallestNumberOfAppearances=countOfLetters->numOfBs;}
-    if(countOfLetters->numOfAs < smallestNumberOfAppearances){smallestNumberOfAppearances=countOfLetters->numOfAs;}
-    if(countOfLetters->numOfLs/2 < smallestNumberOfAppearances){smallestNumberOfAppearances=countOfLetters->numOfLs;}
-    if(countOfLetters->numOfOs/2 < smallestNumberOfAppearances){smallestNumberOfAppearances=countOfLetters->numOfOs;}
-    if(countOfLetters->numOfNs < smallestNumberOfAppearances){smallestNumberOfAppearances=countOfLetters->numOfNs;}
-
-    return smallestNumberOfAppearances;
-}
-
 int maxNumberOfBalloons(char* text) {
-    struct lettersInBalloon countOfLetters = {
-        .numOfBs=0,
-        .numOfAs=0, 
-        .numOfLs=0, 
-        .numOfOs=0, 
-        .numOfNs=0
+    struct Balloon Balloon={
+        .lettersInBalloon={0,0,0,0,0},
+        .lettersInBalloonSize=sizeof(Balloon.lettersInBalloon)/sizeof(int),
+        .smallestNumberOfAppearancesOfBalloon=INT_MAX,
     };
 
-    for(int i=0; i<strlen(text); ++i){
+    for(int i=0; i < strlen(text); ++i){
         switch(text[i]){
-            case 'b': ++countOfLetters.numOfBs;
+            case 'b': ++Balloon.lettersInBalloon[0];
             break;
-            case 'a': ++countOfLetters.numOfAs;
+            case 'a': ++Balloon.lettersInBalloon[1];
             break;
-            case 'l': ++countOfLetters.numOfLs;
+            case 'l': ++Balloon.lettersInBalloon[2];
             break;
-            case 'o': ++countOfLetters.numOfOs;
-            break;
-            case 'n': ++countOfLetters.numOfNs;
+            case 'o': ++Balloon.lettersInBalloon[3];
+            break; 
+            case 'n': ++Balloon.lettersInBalloon[4];
             break;
         }
     }
 
-    return numberOfBalloonAppearances(&countOfLetters);
+    //Account for 'l' and 'o' needing to appear twice to make one instance of "balloon".
+    Balloon.lettersInBalloon[2]/=2;
+    Balloon.lettersInBalloon[3]/=2;
+
+    for(int i=0; i<Balloon.lettersInBalloonSize; ++i){
+        if(Balloon.lettersInBalloon[i] < Balloon.smallestNumberOfAppearancesOfBalloon){
+            Balloon.smallestNumberOfAppearancesOfBalloon=Balloon.lettersInBalloon[i];
+        }
+    }
+
+    return Balloon.smallestNumberOfAppearancesOfBalloon;
 }
