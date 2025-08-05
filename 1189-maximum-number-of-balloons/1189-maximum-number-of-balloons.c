@@ -23,8 +23,6 @@ int maxNumberOfBalloons(char* text) {
             break; 
             case 'n': ++Balloon.lettersInBalloon[4];
             break;
-            default:
-                ;;;
         }
     }
 
