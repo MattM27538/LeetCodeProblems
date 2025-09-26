@@ -15,13 +15,14 @@ public:
             for(auto& characterInWord:word){
                 if(mapOfAllowedCharacters.find(characterInWord) == mapOfAllowedCharacters.end()){
                     allCharactersInWordAreAllowed=false;
+                    break;
                 }
             }
 
             if(allCharactersInWordAreAllowed){
                 ++numberOfStringsUsingOnlyAllowedCharacters;
             }
-            
+
             allCharactersInWordAreAllowed = true;
         }
 
