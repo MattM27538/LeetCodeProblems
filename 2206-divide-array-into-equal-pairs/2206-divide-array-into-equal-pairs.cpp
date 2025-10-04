@@ -1,24 +1,39 @@
+bool numberNotInMap(const int number, const std::unordered_map<int, int>& unorderedMap){
+    return unorderedMap.find(number) == unorderedMap.end();
+}
+
+void addNumberToMap(const int number, std::unordered_map<int, int>& unorderedMap){
+    unorderedMap[number] = 1;
+}
+
+void incrementNumberOfOccurrences(const int number, std::unordered_map<int, int>& unorderedMap){
+    ++unorderedMap[number];
+}
+
+bool eachNumberInMapOccursTwice(const std::unordered_map<int, int>& unorderedMap){
+    for(auto& numberAndNumberOccurrencesPair:unorderedMap){
+        if((numberAndNumberOccurrencesPair.second % 2) != 0){ 
+            return false;
+        }
+    }
+
+    return true;
+}
+
 class Solution {
 public:
     bool divideArray(vector<int>& numbers) {
-        std::unordered_map<int, int> mapOfNumbersToNumberOccurrences {};
+        std::unordered_map<int, int> mapOfNumbersToNumberOfOccurrences {};
         
         for(auto& number:numbers){
-            if(mapOfNumbersToNumberOccurrences.find(number) == mapOfNumbersToNumberOccurrences.end()){
-                mapOfNumbersToNumberOccurrences[number] = 1;
+            if(numberNotInMap(number, mapOfNumbersToNumberOfOccurrences)){
+                addNumberToMap(number, mapOfNumbersToNumberOfOccurrences);
             }
             else{
-                ++mapOfNumbersToNumberOccurrences[number];
+                incrementNumberOfOccurrences(number, mapOfNumbersToNumberOfOccurrences);
             }
         }
 
-        for(auto& pair:mapOfNumbersToNumberOccurrences){
-            // std::cout << pair.first << " " << pair.second << "\n";
-            if((pair.second % 2) != 0){ 
-                return false;
-            }
-        }
-
-        return true;
+        return eachNumberInMapOccursTwice(mapOfNumbersToNumberOfOccurrences);
     }
 };
