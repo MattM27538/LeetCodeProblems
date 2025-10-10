@@ -5,7 +5,7 @@ public:
         auto reverseIterator {s.end()-1};
 
         while(forwardIterator < reverseIterator){
-            char characterFromForwardIterator = *forwardIterator;
+            const char characterFromForwardIterator = *forwardIterator;
             *forwardIterator = *reverseIterator;
             *reverseIterator = characterFromForwardIterator;
 
