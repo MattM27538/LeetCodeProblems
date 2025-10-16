@@ -5,8 +5,8 @@ int reverseDegree(char* s) {
     const int offsetFor1IndexedString = 1;
 
     for(int i = 0; i < strlen(s); ++i){
-        // const int decimalValueForCharInString = (int)s[i];
-        reverseDegree += (decimalValueForReverseda - (s[i] - decimalValueForCharactera)) * (i + offsetFor1IndexedString);
+        const int decimalValueForCharInString = (int)s[i];
+        reverseDegree += (decimalValueForReverseda - (decimalValueForCharInString - decimalValueForCharactera)) * (i + offsetFor1IndexedString);
     }
 
     return reverseDegree;
