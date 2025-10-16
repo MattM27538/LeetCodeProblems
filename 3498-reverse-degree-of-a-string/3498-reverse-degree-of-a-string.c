@@ -1,12 +1,13 @@
 int reverseDegree(char* s) {
-    int sum = 0;
-    
-    for (int i = 0; *s; s++)
-        sum += ((26 - *s + 'a') * (++i));
-    
-    /*
-    for (int i = 0; s[i]; i++) 
-        sum += ((26 - s[i] + 'a') * (i + 1));
-    */
-    return sum;
+    int reverseDegree = 0;
+    const int decimalValueForReverseda = 26;
+    const int decimalValueForCharactera = 97;
+    const int offsetFor1IndexedString = 1;
+
+    for(int i = 0; i < strlen(s); ++i){
+        const int decimalValueForCharInString = (int)s[i];
+        reverseDegree += (decimalValueForReverseda - (decimalValueForCharInString - decimalValueForCharactera)) * (i + offsetFor1IndexedString);
+    }
+
+    return reverseDegree;
 }
