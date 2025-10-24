@@ -19,7 +19,7 @@ public:
             else{
                 --currentNumberOfNestedParenthesis;
             }
-            std::cout << stackOfCharactersInString.top() << " " << currentNumberOfNestedParenthesis << "\n";
+
             maximumNumberOfNestedParenthesis = max(maximumNumberOfNestedParenthesis, currentNumberOfNestedParenthesis);
             stackOfCharactersInString.pop();
         }
