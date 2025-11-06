@@ -15,9 +15,9 @@ void reverseWordInString(char* str, const int startOfWordIndex, const int endOfW
     }
 }
 
-// int setStartOfWordIndexToNextWord(const int whitespaceIndex){
-//     return whitespaceIndex + 1;
-// }
+int setStartOfWordIndexToNextWord(const int whitespaceIndex){
+    return whitespaceIndex + 1;
+}
 
 char* reverseWords(char* str) {
     int startOfWordIndex = 0;
@@ -25,9 +25,8 @@ char* reverseWords(char* str) {
     for(int i = 0; i < strlen(str) + 1; ++i){
         if(stringIndexIsSpaceOrNullTerminator(str, i)){
             reverseWordInString(str, startOfWordIndex, i - 1);
-
-            // startOfWordIndex = setStartOfWordIndexToNextWord(i);
-            startOfWordIndex = i + 1;
+            
+            startOfWordIndex = setStartOfWordIndexToNextWord(i);
         }
     }
 
