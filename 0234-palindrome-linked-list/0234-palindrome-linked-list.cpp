@@ -43,7 +43,7 @@ public:
         }
     }
 
-    void pushSecondHalfOfListToStack(ListNode* iteratorFromMiddleOfList ,std::stack<int>& secondHalfOfListReversed, const int halfOflengthOfLinkedList){
+    void pushSecondHalfOfListToStack(ListNode* iteratorFromMiddleOfList, std::stack<int>& secondHalfOfListReversed, const int halfOflengthOfLinkedList){
         for(auto i {0}; i < halfOflengthOfLinkedList; ++i){
             secondHalfOfListReversed.push(iteratorFromMiddleOfList->val);
             iteratorFromMiddleOfList = iteratorFromMiddleOfList->next;
