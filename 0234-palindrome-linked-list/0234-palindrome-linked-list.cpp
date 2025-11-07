@@ -55,7 +55,6 @@ public:
             if(forwardIterator->val != secondHalfOfListReversed.top()){
                 return false;
             }
-
             forwardIterator = forwardIterator->next;
             secondHalfOfListReversed.pop();
         }
