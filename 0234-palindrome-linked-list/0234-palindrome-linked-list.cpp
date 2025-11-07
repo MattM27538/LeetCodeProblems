@@ -25,7 +25,7 @@ public:
 
         pushSecondHalfOfListToStack(iteratorFromMiddleOfList, secondHalfOfListReversed, (lengthOfLinkedList/2));
 
-        return linkedListIsPalindrome(forwardIterator, secondHalfOfListReversed, lengthOfLinkedList/2);
+        return linkedListIsPalindrome(forwardIterator, secondHalfOfListReversed, (lengthOfLinkedList/2));
     }
 
     void getLengthOfLinkedList(ListNode* forwardIterator, int& lengthOfLinkedList){
