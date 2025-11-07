@@ -14,26 +14,44 @@ public:
         auto lengthOfLinkedList {0};
         ListNode* forwardIterator {head};
 
-        while(forwardIterator != nullptr){
-            ++lengthOfLinkedList;
-            forwardIterator = forwardIterator->next;
-        }
+        getLengthOfLinkedList(forwardIterator, lengthOfLinkedList);
 
         forwardIterator = head;
         ListNode* iteratorFromMiddleOfList {head};
 
-        for(auto i {0}; i < ((lengthOfLinkedList + 1)/2); ++i){
-            iteratorFromMiddleOfList = iteratorFromMiddleOfList->next;
-        }
+        moveIteratorToMiddleOfLinkedList(iteratorFromMiddleOfList, lengthOfLinkedList);
 
         std::stack<int> secondHalfOfListReversed {};
 
-        for(auto i {0}; i < (lengthOfLinkedList/2); ++i){
+        pushSecondHalfOfListToStack(iteratorFromMiddleOfList, secondHalfOfListReversed, (lengthOfLinkedList/2));
+
+        return linkedListIsPalindrome(forwardIterator, secondHalfOfListReversed, lengthOfLinkedList/2);
+    }
+
+    void getLengthOfLinkedList(ListNode* forwardIterator, int& lengthOfLinkedList){
+        while(forwardIterator != nullptr){
+            ++lengthOfLinkedList;
+            forwardIterator = forwardIterator->next;
+        }
+    }
+
+    void moveIteratorToMiddleOfLinkedList(ListNode*& iteratorFromMiddleOfList, const int lengthOfLinkedList){
+        const int halfOflengthOfLinkedList {(lengthOfLinkedList + 1)/2};
+
+        for(auto i {0}; i < halfOflengthOfLinkedList; ++i){
+            iteratorFromMiddleOfList = iteratorFromMiddleOfList->next;
+        }
+    }
+
+    void pushSecondHalfOfListToStack(ListNode* iteratorFromMiddleOfList ,std::stack<int>& secondHalfOfListReversed, const int halfOflengthOfLinkedList){
+        for(auto i {0}; i < halfOflengthOfLinkedList; ++i){
             secondHalfOfListReversed.push(iteratorFromMiddleOfList->val);
             iteratorFromMiddleOfList = iteratorFromMiddleOfList->next;
         }
+    }
 
-        for(auto i {0}; i < (lengthOfLinkedList/2); ++i){
+    bool linkedListIsPalindrome(ListNode* forwardIterator, std::stack<int>& secondHalfOfListReversed, const int halfOflengthOfLinkedList){
+        for(auto i {0}; i < halfOflengthOfLinkedList; ++i){
             if(forwardIterator->val != secondHalfOfListReversed.top()){
                 return false;
             }
