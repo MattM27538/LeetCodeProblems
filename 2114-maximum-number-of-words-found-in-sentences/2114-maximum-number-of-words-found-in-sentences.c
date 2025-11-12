@@ -1,7 +1,3 @@
-int max(const int value1, const int value2){
-    return value1 >= value2 ? value1 : value2;
-}
-
 int mostWordsFound(char** sentences, int sentencesSize) {
     int maximumNumberOfWordsInAnySentence = 0;
 
@@ -12,7 +8,7 @@ int mostWordsFound(char** sentences, int sentencesSize) {
                 ++wordsInSentence;
             }
 
-            maximumNumberOfWordsInAnySentence = max(wordsInSentence, maximumNumberOfWordsInAnySentence);
+            maximumNumberOfWordsInAnySentence = wordsInSentence > maximumNumberOfWordsInAnySentence? wordsInSentence : maximumNumberOfWordsInAnySentence;
         }
     }
 
