@@ -12,7 +12,6 @@ public:
                     ++nextSpaceIndexInNewString;
                 }
             }
-
             stringWithSpacesAdded.push_back(originalString[originalStringIndex]);
         }
 
