@@ -4,7 +4,7 @@ public:
         //Test with reserve
 
         std::string stringWithSpacesAdded {""};
-        // stringWithSpacesAdded.reserve(s.size() + spaces.size());
+        stringWithSpacesAdded.reserve(s.size() + spaces.size());
 
         int nextSpaceIndex {0};
 
