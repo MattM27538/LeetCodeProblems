@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string addSpaces(string s, vector<int>& spaces) {
+    string addSpaces(string& s, vector<int>& spaces) {
         std::string stringWithSpacesAdded {""};
         stringWithSpacesAdded.reserve(s.size() + spaces.size());
         int nextSpaceIndexInNewString {0};
