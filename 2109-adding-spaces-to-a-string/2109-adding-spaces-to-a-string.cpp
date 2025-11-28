@@ -3,7 +3,6 @@ public:
     string addSpaces(string s, vector<int>& spaces) {
         std::string stringWithSpacesAdded {""};
         stringWithSpacesAdded.reserve(s.size() + spaces.size());
-
         int nextSpaceIndexInNewString {0};
 
         for(decltype(std::ssize(s)) oldStringIndex {0}; oldStringIndex < std::ssize(s); ++oldStringIndex){
