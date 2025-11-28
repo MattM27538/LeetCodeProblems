@@ -1,19 +1,19 @@
 class Solution {
 public:
-    string addSpaces(string& s, vector<int>& spaces) {
+    string addSpaces(string& originalString, vector<int>& spaces) {
         std::string stringWithSpacesAdded {""};
-        stringWithSpacesAdded.reserve(s.size() + spaces.size());
+        stringWithSpacesAdded.reserve(originalString.size() + spaces.size());
         int nextSpaceIndexInNewString {0};
 
-        for(decltype(std::ssize(s)) oldStringIndex {0}; oldStringIndex < std::ssize(s); ++oldStringIndex){
-            if(oldStringIndex == spaces[nextSpaceIndexInNewString]){
+        for(decltype(std::ssize(originalString)) originalStringIndex {0}; originalStringIndex < std::ssize(originalString); ++originalStringIndex){
+            if(originalStringIndex == spaces[nextSpaceIndexInNewString]){
                 stringWithSpacesAdded.push_back(' ');
                 if(nextSpaceIndexInNewString < (spaces.size() - 1)){
                     ++nextSpaceIndexInNewString;
                 }
             }
-            
-            stringWithSpacesAdded.push_back(s[oldStringIndex]);
+
+            stringWithSpacesAdded.push_back(originalString[originalStringIndex]);
         }
 
         return stringWithSpacesAdded;
