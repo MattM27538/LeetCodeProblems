@@ -22,12 +22,10 @@ public:
                     stringWithDigitsAndCharsRemoved.push_back(stackOfCharsInStr.top());
                 }
             }
-
             stackOfCharsInStr.pop();
         }
 
         std::reverse(stringWithDigitsAndCharsRemoved.begin(), stringWithDigitsAndCharsRemoved.end());
-
         return stringWithDigitsAndCharsRemoved;
     }
 };
