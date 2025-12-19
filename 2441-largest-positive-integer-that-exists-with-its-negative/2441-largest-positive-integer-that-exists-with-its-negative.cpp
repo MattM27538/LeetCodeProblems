@@ -2,7 +2,6 @@ class Solution {
 public:
     int findMaxK(vector<int>& nums) {
         auto largestNumberWithPositiveAndNegativeInNums {-1};
-
         std::unordered_map<int, bool> numbersInNumsMap {};
 
         for(auto& num:nums){
