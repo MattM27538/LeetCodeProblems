@@ -1,4 +1,4 @@
-int countAsterisks(const char* str) {
+int countAsterisks(char* str) {
     bool isBetweenVerticalBars = false;
     int numberOfAsterisksInBetweenVerticalBars = 0;
 
