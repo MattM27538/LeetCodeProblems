@@ -7,7 +7,7 @@ int getCharacterAsDecimalNumber(const char characterInString, const int exponent
     return (pow(10, exponent) * (characterInString - zeroInAscii));
 }
 
-int maximumValue(const char** strs, const int strsSize) {
+int maximumValue(char** strs, const int strsSize) {
     int  maximumValueOfStringInStrs;
 
     for(int i = 0; i < strsSize; ++i){
