@@ -1,10 +1,12 @@
+int max(const int num1, const int num2){
+    return num1 > num2 ? num1 : num2;
+}
+
 int maximumValue(char** strs, int strsSize) {
-    bool isAlphaNumeric = false;
-    // int longestLengthOfAStringInStrs = 0;
-    // int numericRepresentationOfLongestStringInStrs = 0;
     int  maximumValueOfStringInStrs;
 
     for(int i = 0; i < strsSize; ++i){
+        bool isAlphaNumeric = false;
         int lengthOfString = 0;
         int numericRepresentationOfString = 0;
 
@@ -15,23 +17,17 @@ int maximumValue(char** strs, int strsSize) {
 
             ++lengthOfString;
             numericRepresentationOfString += ((pow(10, ((strlen(strs[i]) - j) - 1))) * ((strs[i][j]) - 48));
-            printf("%zu , ",  (strlen(strs[i]) - j) - 1);
         }
-        printf("%d, ",  numericRepresentationOfString);
         
-        if(isAlphaNumeric){
-            maximumValueOfStringInStrs = lengthOfString > maximumValueOfStringInStrs ? lengthOfString : maximumValueOfStringInStrs; 
+        if(isAlphaNumeric){ 
+            maximumValueOfStringInStrs = max(lengthOfString, maximumValueOfStringInStrs);
         }
         else{
-            maximumValueOfStringInStrs = numericRepresentationOfString > maximumValueOfStringInStrs ? numericRepresentationOfString : maximumValueOfStringInStrs; 
+            maximumValueOfStringInStrs = max(numericRepresentationOfString, maximumValueOfStringInStrs);
         }
-
-        printf(" %d\n ",  maximumValueOfStringInStrs);
 
         isAlphaNumeric = false;
     }
 
-    // return max(longestLengthOfAStringInStrs, numericRepresentationOfLongestStringInStrs);
-    // return numericRepresentationOfLongestStringInStrs > longestLengthOfAStringInStrs ? numericRepresentationOfLongestStringInStrs : longestLengthOfAStringInStrs;
     return maximumValueOfStringInStrs;
 }
