@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maxDistinct(string str) {
-        auto numberOfSubstringsWithDistinctFirstLetter {};
+        auto numberOfSubstringsWithDistinctFirstLetter {0};
 
         std::unordered_map<char, bool> alreadyUsedLettersOfSubstrings{};
 
