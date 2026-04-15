@@ -27,6 +27,5 @@ public:
         addAlphabetDecimalValuesToSet(allLettersInAlphabetDecimalValues);
 
         return allLettersInAlphabetExistInSentence(sentence, allLettersInAlphabetDecimalValues);
-        
     }
 };
