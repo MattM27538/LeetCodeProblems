@@ -1,7 +1,10 @@
 class Solution {
 public:
     void addAlphabetDecimalValuesToSet(std::set<int>& allLettersInAlphabetDecimalValues){
-        for(int i {97}; i <= 122; ++i){
+        constexpr int decimalValueOfa {97};
+        constexpr int decimalValueOfz {122};
+
+        for(int i {decimalValueOfa}; i <= decimalValueOfz; ++i){
             allLettersInAlphabetDecimalValues.insert(i);
         }
     }
@@ -10,7 +13,7 @@ public:
         for(const auto& character : sentence){
             allLettersInAlphabetDecimalValues.erase(static_cast<int>(character));
             
-            if(allLettersInAlphabetDecimalValues.size() == 0){
+            if(allLettersInAlphabetDecimalValues.empty()){
                 return true;
             }
         }
