@@ -9,20 +9,25 @@ public:
                 numsThatExistInNums1[num] = true; 
             }
         }
+        
+        std::vector<int> commonElementsBetweenArrays {0, 0}; 
 
         for(const auto& num : nums2){
             if(numsThatExistInNums2.find(num) == numsThatExistInNums2.end()){
                 numsThatExistInNums2[num] = true; 
             }
-        }
 
-        std::vector<int> commonElementsBetweenArrays {0, 0}; 
-
-        for(const auto& num : nums2){
             if(numsThatExistInNums1[num] == true){
                 ++commonElementsBetweenArrays[1];
             }
         }
+
+
+        // for(const auto& num : nums2){
+        //     if(numsThatExistInNums1[num] == true){
+        //         ++commonElementsBetweenArrays[1];
+        //     }
+        // }
 
         for(const auto& num : nums1){
             if(numsThatExistInNums2[num] == true){
